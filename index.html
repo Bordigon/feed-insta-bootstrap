@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="icon" href="/src/front/assets/img/publicpagesimgs/winkingPhoenix.webp" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="index.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Insta feed</title>
+<script src="https://kit.fontawesome.com/87c489e18b.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+	<nav class="navbar bg-body-tertiary">
+  		<div class="container-fluid">
+			<div class="navbar-brand d-flex align-items-center justify-content-center">
+				<img id="insta_logo" src="assets/insta_logo.jpg"/>
+	    			<span class="mb-0 h2">Instagram</span>
+			</div>
+			<div class="d-flex">
+			<button type="button" class="btn btn-success mx-3" data-bs-toggle="modal" data-bs-target="#uploadPhotoModal">
+				Create new post
+			</button>
+			<div class="modal fade" id="uploadPhotoModal" tabindex="-1" aria-labelledby="uploadPhotoModalLabel" aria-hidden="true">
+  				<div class="modal-dialog">
+				    <div class="modal-content">
+				      <div class="modal-header">
+				        <h1 class="modal-title fs-5" id="exampleModalLabel">Create a new post</h1>
+				        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				      </div>
+			      <div class="modal-body">
+				<div class="mb-3 mx-2">
+				  <label for="textArea" class="form-label">Caption:</label>
+				  <textarea class="form-control" id="textArea" placeholder="Add the caption of your post here" rows="2"></textarea>
+				  <button type="button" class="btn p-0 mt-2 border border-2"><img src="assets/camera.jpg"/></button>
+				  <button type="button" class="btn p-0 mt-2 border border-2"><img src="assets/ubication.jpg"/></button>
+				</div>
+			      </div>
+			      <div class="modal-footer">
+			        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+			        <button type="button" class="btn btn-success">Publish</button>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+			<div class="btn-group">
+  				<button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+				    <img id="settings" src="assets/settings.jpg"/>
+				</button>
+				  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-end">
+				    <li><a class="dropdown-item" href="#">Profile</a></li>
+				    <li><a class="dropdown-item" href="#">Accesibility</a></li>
+				    <li><a class="dropdown-item" href="#">Privacy and Data</a></li>
+				    <li><hr class="dropdown-divider"></li>
+				    <li><a class="dropdown-item" href="#" style="color:red">Log out</a></li>
+				  </ul>
+			</div>
+
+			</div>
+  		</div>
+	</nav>
+	<div class="d-flex align-items-center justify-content-center ">
+	<button type="button" id="gripAll" class="btn"><i class="fa-solid fa-table-cells"></i></button>
+	<button type="button" id="gripOne" class="btn"><i class="fa-solid fa-square"></i></button>
+	</div>
+	<div id="root"></div>
+    <script type="module" src="./utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  </body>
+</html>

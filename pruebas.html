@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambiar Grid con Bootstrap</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-4">
+        <!-- Botón para cambiar el grid -->
+        <button id="toggleGrid" class="btn btn-primary mb-3">
+            Cambiar a Grid 2
+        </button>
+        
+        <!-- Contenedor del grid -->
+        <div id="gridContainer" class="row">
+            <!-- Grid 1 (por defecto) -->
+            <div class="col-md-6">
+                <div class="card bg-primary text-white">
+                    <div class="card-body">
+                        <h5>Elemento 1</h5>
+                        <p>Contenido del primer elemento</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card bg-success text-white">
+                    <div class="card-body">
+                        <h5>Elemento 2</h5>
+                        <p>Contenido del segundo elemento</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const toggleButton = document.getElementById('toggleGrid');
+        const gridContainer = document.getElementById('gridContainer');
+        let isGrid1 = true;
+
+        toggleButton.addEventListener('click', function() {
+            if (isGrid1) {
+                // Cambiar a Grid 2 (3 columnas)
+                gridContainer.innerHTML = `
+                    <div class="col-md-4">
+                        <div class="card bg-warning text-dark">
+                            <div class="card-body">
+                                <h5>Elemento A</h5>
+                                <p>Nuevo layout</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card bg-info text-white">
+                            <div class="card-body">
+                                <h5>Elemento B</h5>
+                                <p>Nuevo layout</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card bg-danger text-white">
+                            <div class="card-body">
+                                <h5>Elemento C</h5>
+                                <p>Nuevo layout</p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                toggleButton.textContent = 'Volver a Grid 1';
+                toggleButton.classList.remove('btn-primary');
+                toggleButton.classList.add('btn-secondary');
+            } else {
+                // Volver a Grid 1 (2 columnas)
+                gridContainer.innerHTML = `
+                    <div class="col-md-6">
+                        <div class="card bg-primary text-white">
+                            <div class="card-body">
+                                <h5>Elemento 1</h5>
+                                <p>Contenido del primer elemento</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card bg-success text-white">
+                            <div class="card-body">
+                                <h5>Elemento 2</h5>
+                                <p>Contenido del segundo elemento</p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                toggleButton.textContent = 'Cambiar a Grid 2';
+                toggleButton.classList.remove('btn-secondary');
+                toggleButton.classList.add('btn-primary');
+            }
+            isGrid1 = !isGrid1;
+        });
+    </script>
+</body>
+</html>

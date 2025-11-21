@@ -1,0 +1,16 @@
+#insta_logo{
+	height:40px;
+}
+
+#settings{
+	height:30px;
+}
+
+.photoAll{
+	object-fit:cover;
+}
+
+.photoRow{
+	width:100%;
+	height:400px;
+}
