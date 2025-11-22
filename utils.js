@@ -52,7 +52,6 @@ const gripAllTemplate = () =>{
 		result = result + `<div class="row mx-1 my-4">`;
 		for(var k = 0; k<counter && k<3; k++){
 			const onePhoto=photo[t];
-			console.log(onePhoto);
 			result = result + `
 				<div class="col-sm-4">
 					<img class="img-fluid h-100 w-100 photoAll"  src=${onePhoto['image_url']}>
